@@ -6,18 +6,18 @@
  */
 
 * {
-    background-color:            #282c34;
+    background-color:            black;
     border-color:                #282c34;
-    text-color:                  #bbc2cf;
-    font:                        "SauceCodePro Nerd Font Mono 9";
-    prompt-font:                 "Ubuntu Bold 9";
-    prompt-background:           #51afef;
-    prompt-foreground:           #282c34;
+    text-color:                  #bbbbbb;
+    font:                        "monospace 14";
+    prompt-font:                 "monospace 14";
+    prompt-background:           #690000;
+    prompt-foreground:           black;
     prompt-padding:              4px;
-    alternate-normal-background: #1c1f24;
-    alternate-normal-foreground: @text-color;
-    selected-normal-background:  #ae3f3e;
-    selected-normal-foreground:  #ffffff;
+/*    alternate-normal-background: #1c1f24;
+    alternate-normal-foreground: @text-color; */
+    selected-normal-background:  #690000;
+    selected-normal-foreground:  black;
     spacing:                     3;
 }
 #window {
