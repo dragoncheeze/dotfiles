@@ -271,22 +271,22 @@ colors:
      black:   '#000000'
      red:     '#690000'
      green:   '#008000'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
+     yellow:  '#EEEE0F'
+     blue:    '#4C4CFF'
+     magenta: '#FF00FF'
+     cyan:    '#00FFFF'
   #  white:   '#c5c8c6'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+    black:   '#666666'
+    red:     '#d54e53'
+    green:   '#b9ca4a'
+    yellow:  '#e7c547'
+    blue:    '#7aa6da'
+    magenta: '#c397d8'
+    cyan:    '#70c0b1'
+    white:   '#eaeaea'
 
   # Dim colors
   #
