@@ -281,7 +281,7 @@ colors:
   bright:
     black:   '#666666'
     red:     '#d54e53'
-    green:   '#b9ca4a'
+    green:   '#83df49'
     yellow:  '#e7c547'
     blue:    '#7aa6da'
     magenta: '#c397d8'
@@ -292,15 +292,15 @@ colors:
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
+  dim:
+     black:   '#131415'
+     red:     '#864343'
+     green:   '#777c44'
+     yellow:  '#9e824c'
+     blue:    '#556a7d'
+     magenta: '#75617b'
+     cyan:    '#5b7d78'
+     white:   '#828482'
 
   # Indexed Colors
   #
