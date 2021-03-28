@@ -9,21 +9,6 @@ sudo dpkg --add-architecture i386
 # update
 sudo apt update -yy
 
-# install vulkan mesa drivers
-sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386 -yy
-
-# install dxvk
-sudo apt install dxvk dxvk-wine32-development dxvk-wine64-development -yy
-
-# install steam
-sudo apt install steam -yy
-
-# install game mode
-sudo apt install gamemode -yy
-
-# install pre-load
-sudo apt install preload -yy
-
 # import wine gpg key
 sudo wget -nc https://dl.winehq.org/wine-builds/winehq.key
 
