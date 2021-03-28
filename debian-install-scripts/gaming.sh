@@ -43,10 +43,7 @@ sudo apt install --install-recommends winehq-staging -yy
 # install wine tricks
 sudo apt install winetricks -yy
 
-# install Play On Linux
-sudo apt install playonlinux -yy
-
-#import lutris repository key
+#install lutris
 sudo apt install --install-recommends lutris
 
 # return permissions to root
