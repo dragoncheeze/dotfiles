@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo apt install fish xserver-xorg xorg fonts-ubuntu picom lxappearance pcmanfm xarchiver rofi libxft-dev libx11-dev libxinerama-dev geany qutebrowser suckless-tools build-essential curl wget cargo sxiv maim nitrogen
+sudo apt install fish xserver-xorg xorg fonts-ubuntu picom lxappearance pcmanfm xarchiver rofi libxft-dev libx11-dev libxinerama-dev geany qutebrowser suckless-tools build-essential curl wget cargo sxiv maim nitrogen alsa-utils volumeicon-alsa
