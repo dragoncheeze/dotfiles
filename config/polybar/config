@@ -30,12 +30,12 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #f90000
+primary = #5294e2
 secondary = #e60053
 alert = #bd2c40
 
@@ -69,7 +69,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = memory cpu battery date
+modules-right = memory cpu battery wlan date
 
 tray-position = right
 tray-padding = 2
@@ -163,12 +163,13 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp59s0
+interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected> <ramp-signal>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = "net: "
+label-connected-foreground = ${colors.foreground-alt}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -176,12 +177,12 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = 20%
+ramp-signal-1 = 40%
+ramp-signal-2 = 60%
+ramp-signal-3 = 80%
+ramp-signal-4 = 100%
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -203,7 +204,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %a %b %d
+date = "%a %b %d  "
 date-alt =
 
 time = %I:%M
@@ -291,15 +292,15 @@ ramp-capacity-1 =
 ramp-capacity-2 =
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 =
-animation-charging-1 =
-animation-charging-2 =
+animation-charging-0 = "ac: "
+animation-charging-1 = "ac: "
+animation-charging-2 = "ac: "
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 =
-animation-discharging-1 =
-animation-discharging-2 =
+animation-discharging-0 = "batt: "
+animation-discharging-1 = "batt: "
+animation-discharging-2 = "batt: "
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
