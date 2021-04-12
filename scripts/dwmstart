@@ -1,6 +1,6 @@
 #!/bin/sh
 lxpolkit &
 picom &
-volumeicon &
+#volumeicon &
 nitrogen --restore &
 slstatus
