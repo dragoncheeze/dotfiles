@@ -29,7 +29,7 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
     changeVolume 5%-
 XF86AudioMute
-    volmute mute
+    volmute toggle
 # bspwm hotkeys
 #
 
