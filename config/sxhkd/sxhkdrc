@@ -24,13 +24,12 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #Volume Control
-XF86AudioLowerVolume
-	changeVolume 3dB-
 XF86AudioRaiseVolume
-	changeVolume 3db+
+    changeVolume 5%+
+XF86AudioLowerVolume
+    changeVolume 5%-
 XF86AudioMute
-    changeVolume toggle
-#
+    volmute mute
 # bspwm hotkeys
 #
 
