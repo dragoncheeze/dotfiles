@@ -17,7 +17,7 @@ set showmode                    " shows current mode
 filetype plugin on
 syntax on                       " enables syntax highlighting
 
-set number 
+set number
                      " shows line numbers
 "set relativenumber              " shows line numbers relative to the cursor position
 
@@ -65,8 +65,8 @@ map <leader>th <C-w>t<C-w>H
 map <leader>tk <C-w>t<C-w>K
 
 " remap ESC to ii
-:imap ii <Esc>
-:imap CapsLock <Esc>
+":imap ii <Esc>
+":imap CapsLock <Esc>
 
 " open vifm in a vertical split
 nnoremap <leader>vs :VsplitVifm<>CR
