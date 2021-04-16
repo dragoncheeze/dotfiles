@@ -5,9 +5,11 @@ sxhkd &
 xsetroot -cursor_name left_ptr &
 lxpolkit &
 picom &
+killall polybar
 polybar -c ~/.config/polybar/config example &
 #volumeicon &
-#pnmixer &
+killall pasystray
+pasystray --notify=all &
 nitrogen --restore &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
@@ -31,4 +33,5 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Lutris state=floating
 bspc rule -a battle.net.exe state=floating
+bspc rule -a wow.exe desktop='^3'
 bspc rule -a discord desktop='^2' state=floating
