@@ -7,5 +7,5 @@ conky.config = {
 };
 
 conky.text = [[
-Up:${uptime_short} |Batt:${battery_short} |RAM:$memperc% | CPU:${cpu}% | ${time %a %b %d %I:%M %p }
+| batt: ${battery_short} | ram: $memperc% | cpu: ${cpu}% | ${time %a %b %d %I:%M %p }
 ]];
