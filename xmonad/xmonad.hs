@@ -19,9 +19,10 @@ import XMonad.Layout.Fullscreen -- alows windows to go fullscreen (youtube)
 import XMonad.Layout.Spacing -- gaps
 import XMonad.Layout.NoBorders -- no boarders on full screen
 import XMonad.Hooks.ManageHelpers -- Centerfloat
-
+import XMonad.Layout.Gaps
+import Graphics.X11.ExtraTypes.XF86
 -- set terminal
-myTerminal      = "st"
+myTerminal      = "alacritty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -56,7 +57,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#222222"
-myFocusedBorderColor = "#d00000"
+myFocusedBorderColor = "#39679e"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -68,7 +69,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Keybind Programs
     , ((modm,               xK_p     ), spawn "rofi -show drun")
-    , ((modm,               xK_b     ), spawn "brave-browser")
+    , ((modm,               xK_b     ), spawn "qutebrowser")
     , ((modm,               xK_n     ), spawn "pcmanfm")
     , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run")
 
@@ -110,7 +111,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Expand the master area
     , ((modm,               xK_l     ), sendMessage Expand)
-    
+
     -- Shrink and expand ratio between the secondary panes, for the ResizableTall layout
     , ((modm .|. shiftMask,               xK_h), sendMessage MirrorShrink)
     , ((modm .|. shiftMask,               xK_l), sendMessage MirrorExpand)
@@ -135,6 +136,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+
+    -- control gaps
+    , ((modm .|. controlMask, xK_g), sendMessage $ ToggleGaps)  -- toggle all gaps
+    , ((modm .|. controlMask, xK_t), sendMessage $ ToggleGap U) -- toggle the top gap
+    , ((modm .|. controlMask, xK_w), sendMessage $ IncGap 5 R)  -- increment the right-hand gap
+    , ((modm .|. controlMask, xK_q), sendMessage $ DecGap 5 R)  -- decrement the right-hand gap
+
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
@@ -221,6 +229,7 @@ myLayout = avoidStruts (spacing 3 $ ResizableTall 1 (3/100) (1/2) []) ||| noBord
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp-2.10"      --> doFloat
+    , className =? "Galculator"     --> doCenterFloat
     , className =? "Lutris"         --> doCenterFloat
     , className =? "battle.net.exe" --> doCenterFloat
     , resource  =? "desktop_window" --> doIgnore
@@ -256,10 +265,11 @@ myLogHook = return ()
 myStartupHook = do
         spawnOnce "nitrogen --restore &"
         spawnOnce "picom &"
- --       spawnOnce "stalonetray &"
+--      spawnOnce "stalonetray &"
         spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --tint 0x000000  --height 20 &"
-        spawnOnce "volumeicon &"
-        spawnOnce "dropbox start -i &"
+--      spawnOnce "volumeicon &"
+        spawnOnce "pasystray --notify=all"
+--      spawnOnce "dropbox start -i &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -273,10 +283,13 @@ main =  do
         , layoutHook = layoutHook defaults
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
-                        , ppCurrent = xmobarColor "#d00000" "" . wrap "[" "]" -- workslpace color indicator
-                        , ppTitle = xmobarColor "#d00000" "" . shorten 50
+                        , ppCurrent = xmobarColor "#39679e" "" . wrap "[" "]" -- workslpace color indicator
+                        , ppVisible = xmobarColor "#98be65" ""              -- Visible but not current workspace
+                        , ppHidden = xmobarColor "#82AAFF" "" . wrap "*" "" -- Hidden workspaces
+                        , ppHiddenNoWindows = xmobarColor "#c792ea" ""     -- Hidden workspaces (no windows)
+                        , ppTitle = xmobarColor "#39679e" "" . shorten 60
                         }
-           }             
+           }
 
 
 -- A structure containing your configuration settings, overriding
