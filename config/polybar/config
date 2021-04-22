@@ -148,7 +148,7 @@ type = internal/cpu
 interval = 2
 format-prefix = "cpu: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = #d25252
 label = %percentage:2%%
 
 [module/memory]
@@ -156,7 +156,7 @@ type = internal/memory
 interval = 2
 format-prefix = "ram: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #8aff80
 label = %percentage_used%%
 
 [module/wlan]
@@ -210,7 +210,7 @@ time-alt = %I:%M
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #5294e2
 
 label = %date% %time%
 
@@ -245,12 +245,12 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -276,12 +276,12 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline =	#ffff80
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "full "
+format-full-prefix = "full: "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -357,7 +357,7 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+;pseudo-transparency = true
 
 [global/wm]
 margin-top = 5
