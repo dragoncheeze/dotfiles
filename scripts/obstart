@@ -1,0 +1,6 @@
+#!/bin/sh
+sxhkd &
+picom &
+tint2 &
+nitrogen --restore &
+pasystray --notify=all &
