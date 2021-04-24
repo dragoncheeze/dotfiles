@@ -13,6 +13,8 @@ super + n
 # launch browser
 super + b
     brave-browser
+super + shift +b
+    qutebrowser
 
 # program launcher
 super + p
