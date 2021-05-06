@@ -75,7 +75,8 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "x", lazy.window.kill(), desc="Kill focused window"),
-
+    Key([mod], 'f', lazy.window.toggle_floating()),
+    Key([mod], 'e', lazy.window.toggle_fullscreen()),
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
@@ -113,6 +114,7 @@ layouts = [
     layout.Bsp(**layout_theme),
     #layout.Matrix(),
     layout.Max(**layout_theme),
+    #layout.Floating(**layout_theme),
     #layout.MonadWide(),
     #layout.RatioTile(),
     #layout.Tile(),
