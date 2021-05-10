@@ -38,6 +38,7 @@ filemanager = "pcmanfm"
 rofi = "drun"
 qute = "qutebrowser"
 dmenu = "dmenu_run -nb black -i -fn 'Ubuntu-14'"
+screenshot = "scrot"
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -82,6 +83,7 @@ keys = [
     Key([mod], "n", lazy.spawn(filemanager), desc="Launch PCmanFM"),
     Key([mod], "p", lazy.spawn(rofi), desc="Launch Rofi"),
     Key([mod, "shift"], "p", lazy.spawn(dmenu), desc="Launch dmenu"),
+    Key([mod], "s", lazy.spawn(screenshot), desc="Screenshot"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),

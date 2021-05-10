@@ -11,7 +11,7 @@ killall pasystray
 pasystray --notify=all &
 nitrogen --restore &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V VI VII VIII IX
 
 bspc config border_width         2
 bspc config window_gap           8
@@ -41,3 +41,4 @@ bspc rule -a Lutris  state=floating
 bspc rule -a battle.net.exe desktop='^1' state=floating
 bspc rule -a discord desktop='^2' state=floating
 bspc rule -a wow.exe desktop='^3'
+bspc rule -a Galculator state=floating
