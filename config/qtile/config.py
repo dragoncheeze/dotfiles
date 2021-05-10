@@ -131,7 +131,7 @@ layouts = [
     layout.Bsp(**layout_theme),
     #layout.Matrix(),
     layout.Max(**layout_theme),
-    #layout.Floating(**layout_theme),
+    #layout.Floating(border_width = 2),
     #layout.MonadWide(),
     #layout.RatioTile(),
     #layout.Tile(),
@@ -192,7 +192,7 @@ dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
+floating_layout = layout.Floating(border_width=2, border_focus='39679e', float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
@@ -212,6 +212,12 @@ reconfigure_screens = True
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
 auto_minimize = True
+
+# autostart
+#@hook.subscribe.startup_once
+#def start_once():
+#    home = os.path.expanduser('~')
+#    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
