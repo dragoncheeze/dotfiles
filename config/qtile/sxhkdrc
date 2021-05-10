@@ -12,7 +12,7 @@ super + n
 
 # launch browser
 super + b
-    brave-browser
+    chromium
 # launche qutebrowser
 super + shift + b
     qutebrowser
@@ -26,10 +26,10 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #Volume Control
-XF86AudioRaiseVolume
-    pactl set-sink-volume 0 +5%
-XF86AudioLowerVolume
-    pactl set-sink-volume 0 -5%
-XF86AudioMute
-    pactl set-sink-mute 0 toggle
+#XF86AudioRaiseVolume
+#    pactl set-sink-volume 0 +5%
+#XF86AudioLowerVolume
+#    pactl set-sink-volume 0 -5%
+#XF86AudioMute
+#    pactl set-sink-mute 0 toggle
 

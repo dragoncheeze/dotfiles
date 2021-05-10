@@ -1,6 +1,6 @@
 #!/bin/sh
 lxpolkit &
 picom &
-sxhkd -c ~/.config/qtile/sxhkdrc &
+#sxhkd -c ~/.config/qtile/sxhkdrc &
 pasystray --notify=all &
 nitrogen --restore &

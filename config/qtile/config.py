@@ -33,7 +33,11 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "st"
-
+browser = "chromium"
+filemanager = "pcmanfm"
+rofi = "drun"
+qute = "qutebrowser"
+dmenu = "dmenu_run -nb black -i -fn 'Ubuntu-14'"
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -72,6 +76,13 @@ keys = [
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
+    # Programs
+    Key([mod], "b", lazy.spawn(browser), desc="Launch Web Browser"),
+    Key([mod, "shift"], "b", lazy.spawn(qute), desc="Launch Qutebrowser"),
+    Key([mod], "n", lazy.spawn(filemanager), desc="Launch PCmanFM"),
+    Key([mod], "p", lazy.spawn(rofi), desc="Launch Rofi"),
+    Key([mod, "shift"], "p", lazy.spawn(dmenu), desc="Launch dmenu"),
+
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "x", lazy.window.kill(), desc="Kill focused window"),
@@ -81,6 +92,10 @@ keys = [
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+    # Sound
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5%")),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -92,12 +107,12 @@ for i in groups:
             desc="Switch to group {}".format(i.name)),
 
         # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
+        #Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+        #    desc="Switch to & move focused window to group {}".format(i.name)),
         # Or, use below if you prefer not to switch to that group.
         # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+            desc="move focused window to group {}".format(i.name)),
     ])
 
 layout_theme = {"border_width": 2,
@@ -124,8 +139,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='sans',
-    fontsize=14,
+    font='Ubuntu',
+    fontsize=18,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -134,7 +149,9 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Image(filename='~/.config/qtile/debian-26.png', scale='false'),
                 widget.GroupBox(),
+                #widget.CurrentLayoutIcon(),
                 #widget.CurrentLayout(),
                 widget.Prompt(),
                 widget.Sep(linewidth = 0, padding = 50),
@@ -145,11 +162,11 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Battery(format='batt: {char} {percent:2.0%}', foreground='#ffff80'),
+                widget.Battery(format='batt: {char} {percent:2.0%}', charge_char='+', discharge_char='-', foreground='#ffff80'),
                 widget.Sep(),
-                widget.CPU(format='cpu: {load_percent}%', foreground='#d25252'),
+                widget.CPU(format='cpu: {load_percent}%', foreground='#d25252',),
                 widget.Sep(),
-                widget.Memory(format='mem:{MemUsed: .0f}{mm}', foreground='#8aff80'),
+                widget.Memory(format='mem:{MemUsed: .0f}{mm}', foreground='#8aff80',),
                 widget.Sep(),
                 widget.Clock(format='%a %b %d  %I:%M %p', foreground='#5294e2'),
                 widget.Systray(),
@@ -179,6 +196,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='confirmreset'),  # gitk
     Match(wm_class='battle.net.exe'),
     Match(wm_class='Lutris'),
+    Match(wm_class='galculator'),
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
