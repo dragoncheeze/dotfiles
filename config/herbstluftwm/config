@@ -31,7 +31,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #000000
-background = #000000
+background = #aa000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -409,7 +409,7 @@ label-urgent-underline = ${colors.alert}
 label-urgent-padding = 1
 
 label-empty = %name%
-label-empty-foreground = ${colors.foreground}
+label-empty-foreground = #555
 label-empty-padding = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
