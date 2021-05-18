@@ -8,10 +8,11 @@ hc() {
 
 hc emit_hook reload
 
-xsetroot -solid '#5A8E3A'
+#xsetroot -solid '#5A8E3A'
 lxpolkit &
 picom --experimental-backends &
-nitrogen --restore &
+#nitrogen --restore &
+#feh --bg-scale ~/Pictures/green-fractal.jpg
 #dunst &
 killall pasystray
 pasystray --notify=all &
@@ -29,10 +30,12 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-x close
 hc keybind $Mod-Return spawn alacritty
 
-hc keybind $Mod-p spawn rofi -show drun
+hc keybind $Mod-p spawn rofi -show drun -config ~/.config/rofi/green-config
 hc keybind $Mod-n spawn pcmanfm
-hc keybind $Mod-b spawn brave-browser
+hc keybind $Mod-b spawn qutebrowser
+hc keybind $Mod-Shift-b spawn brave-browser
 hc keybind $Mod-g spawn lutris
+#hc keybind $Mod-Shift-s spawn scrot
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -121,19 +124,19 @@ hc keybind $Mod-i jumpto urgent
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#9f78e1'
+hc set frame_border_active_color green
 hc set frame_border_normal_color '#555'
 hc set frame_bg_normal_color '#000000'
 hc set frame_bg_active_color '#000000'
 hc set frame_border_width 2
-hc set always_show_frame 0
-hc set frame_bg_transparent 1
+hc set always_show_frame 1
+hc set frame_bg_transparent 0
 hc set frame_transparent_width 0
 hc set frame_gap 5
 
 hc set focus_follows_mouse 1
 
-hc attr theme.active.color '#5294e2'
+hc attr theme.active.color green
 hc attr theme.normal.color '#454545'
 hc attr theme.urgent.color orange
 hc attr theme.inner_width 0
@@ -148,7 +151,7 @@ hc attr theme.background_color '#141414'
 
 hc set window_gap 5
 hc set frame_padding 0
-hc set smart_window_surroundings off
+hc set smart_window_surroundings on
 hc set smart_frame_surroundings on
 hc set mouse_recenter_gap 0
 
@@ -162,7 +165,10 @@ hc keybind XF86AudioMute        spawn pactl set-sink-mute @DEFAULT_SINK@ toggle
 hc unrule -F
 #hc rule class=XTerm tag=3 # move all xterms to tag 3
 hc rule focus=on # normally focus new clients
-hc rule floatplacement=smart
+hc rule floatplacement=center
+hc rule class=Galculator floating=on
+hc rule class=battle.net.exe floating=on
+hc rule class=discord tag=2
 #hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
