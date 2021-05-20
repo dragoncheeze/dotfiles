@@ -31,10 +31,11 @@ hc keybind $Mod-x close
 hc keybind $Mod-Return spawn alacritty
 
 hc keybind $Mod-p spawn rofi -show drun -config ~/.config/rofi/green-config
+hc keybind $Mod-Shift-p spawn dmenu_run -nb black -sb '#008000' -sf black -i -fn 'Ubuntu-16'
 hc keybind $Mod-n spawn pcmanfm
 hc keybind $Mod-b spawn qutebrowser
 hc keybind $Mod-Shift-b spawn brave-browser
-hc keybind $Mod-g spawn lutris
+hc keybind $Mod-g spawn Lutris
 #hc keybind $Mod-Shift-s spawn scrot
 
 # basic movement in tiling and floating mode
@@ -169,6 +170,7 @@ hc rule floatplacement=center
 hc rule class=Galculator floating=on
 hc rule class=battle.net.exe floating=on
 hc rule class=discord tag=2
+hc rule class=lutris floating=on
 #hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
