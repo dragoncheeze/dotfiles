@@ -178,6 +178,9 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
+# place new windows in empty frames, if possible
+hc rule index=e
+
 hc set tree_style '╾│ ├└╼─┐'
 
 # unlock, just to be sure
