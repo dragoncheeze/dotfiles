@@ -1,4 +1,4 @@
-Config { font = "xft:Ubuntu:weight=bold:pixelsize=14:antialias=true:hinting=true"
+Config { font = "xft:Ubuntu:weight=bold:pixelsize=16:antialias=true:hinting=true"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB
@@ -32,4 +32,4 @@ Config { font = "xft:Ubuntu:weight=bold:pixelsize=14:antialias=true:hinting=true
        , sepChar = "%"
        , alignSep = "}{"
        , template = " %StdinReader%}\
-                    \{ %cpu% | %memory% | %battery% |  <fc=#39679e>%date%</fc> |                                  "
+                    \{ %cpu% | %memory% | %battery% |  <fc=#39679e>%date%</fc> |"

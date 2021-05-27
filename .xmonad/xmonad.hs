@@ -21,6 +21,8 @@ import XMonad.Layout.NoBorders -- no boarders on full screen
 import XMonad.Hooks.ManageHelpers -- Centerfloat
 import XMonad.Layout.Gaps
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Layout.BinarySpacePartition
+import XMonad.Layout.Grid (Grid(..))
 -- set terminal
 myTerminal      = "alacritty"
 
@@ -52,7 +54,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = [" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "]
+myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -193,7 +195,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (spacing 3 $ ResizableTall 1 (3/100) (1/2) []) ||| noBorders Full
+myLayout = avoidStruts (spacing 3 $ emptyBSP) ||| noBorders Full
   where
      -- default tiling algorithm partitions the screen into two panes
     --tiled   = spacing 3 $ ResizableTall nmaster delta ratio
@@ -262,11 +264,12 @@ myStartupHook = do
         spawnOnce "nitrogen --restore &"
         spawnOnce "picom &"
 --      spawnOnce "stalonetray &"
-        spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --tint 0x000000  --height 20 &"
+--      spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --tint 0x000000  --height 20 &"
 --      spawnOnce "volumeicon &"
-        spawnOnce "pasystray --notify=all"
+--      spawnOnce "pasystray --notify=all"
         spawnOnce "sxhkd -c ~/.xmonad/sxhkdrc"
 --      spawnOnce "dropbox start -i &"
+        spawnOnce "xsetroot -cursor_name left_ptr &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -280,10 +283,10 @@ main =  do
         , layoutHook = layoutHook defaults
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
-                        , ppCurrent = xmobarColor "#39679e" "" . wrap "[" "]" -- workslpace color indicator
-                        , ppVisible = xmobarColor "#98be65" ""              -- Visible but not current workspace
-                        , ppHidden = xmobarColor "#82AAFF" "" . wrap "*" "" -- Hidden workspaces
-                        , ppHiddenNoWindows = xmobarColor "#c792ea" ""     -- Hidden workspaces (no windows)
+                        , ppCurrent = xmobarColor "#39679e" "" . wrap "" "" -- workslpace color indicator
+                        , ppVisible = xmobarColor "#4c566a" ""              -- Visible but not current workspace
+                        , ppHidden = xmobarColor "#bf616a" "" . wrap "" "" -- Hidden workspaces
+                        , ppHiddenNoWindows = xmobarColor "#222222" ""     -- Hidden workspaces (no windows)
                         , ppTitle = xmobarColor "#39679e" "" . shorten 60
                         }
            }
