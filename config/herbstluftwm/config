@@ -31,7 +31,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #000000
-background = #aa000000
+background = #000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -43,14 +43,14 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 15
 offset-x = 0
 offset-y = 0
 radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
-foreground = ${colors.foreground
+foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
@@ -64,7 +64,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu:pixelsize=15;1
+font-0 = Ubuntu Mono:pixelsize=12;1
 font-1 = font-awesome:pixelsize=15;1
 
 modules-left = ewmh
@@ -150,7 +150,7 @@ type = internal/cpu
 interval = 2
 format-prefix = "cpu: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #d25252
+;format-underline = #d25252
 label = %percentage:2%%
 
 [module/memory]
@@ -158,7 +158,7 @@ type = internal/memory
 interval = 2
 format-prefix = "ram: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8aff80
+;format-underline = #8aff80
 label = %percentage_used%%
 
 [module/wlan]
@@ -167,7 +167,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected> <ramp-signal>
-format-connected-underline = #9f78e1
+;format-connected-underline = #9f78e1
 label-connected = "net: "
 label-connected-foreground = ${colors.foreground-alt}
 
@@ -212,7 +212,7 @@ time-alt = %I:%M
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #5294e2
+;format-underline = #5294e2
 
 label = %date% %time%
 
@@ -278,7 +278,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline =	#ffff80
+;format-charging-underline =	#ffff80
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -395,8 +395,8 @@ label-monitor = %name%
 
 label-active = %name%
 label-active-foreground = ${colors.foreground}
-label-active-background = ${colors.background}
-label-active-underline= #5294e2
+label-active-background = #444
+;label-active-underline= #0ff000
 label-active-padding = 1
 
 label-occupied = %name%
