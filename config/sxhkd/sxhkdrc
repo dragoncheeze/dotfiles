@@ -8,7 +8,7 @@ super + Return
 
 # run file manager
 super + n
-   thunar
+   pcmanfm
 
 # launch browser
 super + b
