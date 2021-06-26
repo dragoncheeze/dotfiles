@@ -32,11 +32,11 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "st"
-browser = "chromium"
+terminal = "alacritty"
+browser = "qutebrowser"
 filemanager = "pcmanfm"
 rofi = "drun"
-qute = "qutebrowser"
+qute = "chormium"
 dmenu = "dmenu_run -nb black -i -fn 'Ubuntu-14'"
 screenshot = "scrot"
 keys = [
@@ -95,9 +95,9 @@ keys = [
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
     # Sound
-    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5%")),
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 1 toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 1 -5%")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 1 +5%")),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -119,7 +119,7 @@ for i in groups:
 
 layout_theme = {"border_width": 2,
                 "margin": 8,
-                "border_focus": "39679e",
+                "border_focus": "2477c6",
                 "border_normal": "1D2330"
                 }
 
@@ -164,13 +164,16 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Battery(format='batt: {char} {percent:2.0%}', charge_char='+', discharge_char='-', foreground='#ffff80'),
+                #widget.Battery(format='batt: {char} {percent:2.0%}', charge_char='+', discharge_char='-', foreground='#ffff80'),
                 widget.Sep(),
-                widget.CPU(format='cpu: {load_percent}%', foreground='#d25252',),
+                widget.CPU(format='cpu: {load_percent}%', foreground='#ff5555',),
                 widget.Sep(),
-                widget.Memory(format='mem:{MemUsed: .0f}{mm}', foreground='#8aff80',),
+                widget.Memory(format='mem:{MemUsed: .0f}{mm}', foreground='#50fa7b',),
                 widget.Sep(),
-                widget.Clock(format='%a %b %d  %I:%M %p', foreground='#5294e2'),
+                widget.TextBox(text='vol:', foreground='#bd93f9'),
+                widget.Volume(foreground='#bd93f9'),
+                widget.Sep(),
+                widget.Clock(format='%a %b %d  %I:%M %p', foreground='#6272a4'),
                 widget.Systray(),
             ],
             24,
@@ -192,7 +195,7 @@ dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(border_width=2, border_focus='39679e', float_rules=[
+floating_layout = layout.Floating(border_width=2, border_focus='2477c6', float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk

@@ -31,7 +31,7 @@ hc keybind $Mod-x close
 hc keybind $Mod-Return spawn alacritty
 
 hc keybind $Mod-p spawn rofi -show drun
-hc keybind $Mod-Shift-p spawn dmenu_run -nb black -sb '#444444' -sf black -i -fn 'UbuntuMono-12'
+hc keybind $Mod-Shift-p spawn dmenu_run -nb black -sb '#39679e' -sf black -i -fn 'UbuntuMono-12'
 hc keybind $Mod-n spawn pcmanfm
 hc keybind $Mod-b spawn qutebrowser
 hc keybind $Mod-Shift-b spawn brave-browser
@@ -125,11 +125,11 @@ hc keybind $Mod-i jumpto urgent
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#39679e'
+hc set frame_border_active_color '#2477c6'
 hc set frame_border_normal_color '#555'
 hc set frame_bg_normal_color '#000000'
 hc set frame_bg_active_color '#000000'
-hc set frame_border_width 1
+hc set frame_border_width 3
 hc set always_show_frame off
 hc set frame_bg_transparent on
 hc set frame_transparent_width 0
