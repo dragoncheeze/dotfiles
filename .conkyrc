@@ -7,5 +7,5 @@ conky.config = {
 };
 
 conky.text = [[
-| batt: ${battery_short} | ram: $memperc% | cpu: ${cpu}% | ${time %a %b %d %I:%M %p }
+vol: ${exec amixer -D pulse get Master | awk -F'[][]' 'END{ print $4" "$2 }'} | batt: ${battery_short} | ram: $memperc% | cpu: ${cpu}% | ${time %a %b %d %I:%M %p }
 ]];
