@@ -10,8 +10,8 @@ hc emit_hook reload
 
 #xsetroot -solid '#5A8E3A'
 lxpolkit &
-picom --experimental-backends &
-nitrogen --restore &
+#picom --experimental-backends &
+#nitrogen --restore &
 #feh --bg-scale ~/Pictures/green-fractal.jpg
 #dunst &
 killall pasystray
@@ -28,10 +28,10 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-x close
-hc keybind $Mod-Return spawn alacritty
+hc keybind $Mod-Return spawn xterm
 
-hc keybind $Mod-p spawn rofi -show drun
-hc keybind $Mod-Shift-p spawn dmenu_run -nb black -sb '#39679e' -sf black -i -fn 'UbuntuMono-12'
+hc keybind $Mod-Shift-p spawn rofi -show drun
+hc keybind $Mod-p spawn dmenu_run -nb black -sb '#bbbbbb' -sf black -i -fn 'UbuntuMono-10'
 hc keybind $Mod-n spawn pcmanfm
 hc keybind $Mod-b spawn qutebrowser
 hc keybind $Mod-Shift-b spawn brave-browser
@@ -125,15 +125,15 @@ hc keybind $Mod-i jumpto urgent
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#2477c6'
+hc set frame_border_active_color '#bbbbbb'
 hc set frame_border_normal_color '#555'
 hc set frame_bg_normal_color '#000000'
 hc set frame_bg_active_color '#000000'
-hc set frame_border_width 3
-hc set always_show_frame off
-hc set frame_bg_transparent on
+hc set frame_border_width 2
+hc set always_show_frame on
+hc set frame_bg_transparent off
 hc set frame_transparent_width 0
-hc set frame_gap 5
+hc set frame_gap 1
 
 hc attr theme.active.color '#dfdfdf'
 hc attr theme.normal.color '#555555'
@@ -142,13 +142,14 @@ hc attr theme.inner_width 0
 hc attr theme.inner_color black
 hc attr theme.border_width 1
 hc attr theme.floating.border_width 1
-hc attr theme.floating.outer_width 1
+hc attr theme.floating.outer_width 2
 hc attr theme.floating.outer_color '#555555'
-hc attr theme.active.inner_color '#000000'
-hc attr theme.active.outer_color '#39679e'
+c attr theme.active.inner_color '#000000'
+hc attr theme.active.outer_color '#bbbbbb'
 hc attr theme.background_color '#000000'
 
-hc set window_gap 5
+
+hc set window_gap 1
 hc set frame_padding 1
 hc set smart_window_surroundings on
 hc set smart_frame_surroundings on
@@ -192,8 +193,8 @@ hc unlock
 # hc detect_monitors
 
 # find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/home/colby/.config/herbstluftwm/panel.sh
+panel=~/.config/herbstluftwm/panel2.sh
+[ -x "$panel" ] || panel=/home/colby/.config/herbstluftwm/panel2.sh
 for monitor in $(hc list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" "$monitor" &

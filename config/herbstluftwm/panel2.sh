@@ -20,7 +20,7 @@ panel_width=${geometry[2]}
 panel_height=16
 font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
 bgcolor='black'
-selbg='#006600'
+selbg='#bbbbbb'
 selfg='#101010'
 
 ####

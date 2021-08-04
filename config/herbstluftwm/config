@@ -64,12 +64,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu:pixelsize=12;1
+font-0 = Ubuntu:pixelsize=15;1
 font-1 = font-awesome:pixelsize=15;1
 
 modules-left = ewmh
 modules-center = xwindow
-modules-right =  memory cpu battery date
+modules-right =  memory cpu battery wlan date
 
 tray-position = right
 tray-padding = 2
@@ -169,7 +169,7 @@ interval = 3.0
 format-connected = <label-connected> <ramp-signal>
 ;format-connected-underline = #9f78e1
 label-connected = "net: "
-label-connected-foreground = ${colors.foreground-alt}
+label-connected-foreground = #9f78e1
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -204,10 +204,15 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = "%a %b %d  "
+format-foreground = #39679e
+format-background = #000000
+
+
+
+date = " %a %b %d  "
 date-alt =
 
-time = %I:%M %p
+time = "%I:%M %p "
 time-alt = %I:%M
 
 format-prefix =
@@ -284,7 +289,7 @@ format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = "full: "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = #ffff80
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 =
@@ -301,7 +306,7 @@ animation-charging-framerate = 750
 animation-discharging-0 = "batt: "
 animation-discharging-1 = "batt: "
 animation-discharging-2 = "batt: "
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = #ffff80
 animation-discharging-framerate = 750
 
 
@@ -394,8 +399,8 @@ format = <label-state>
 label-monitor = %name%
 
 label-active = %name%
-label-active-foreground = ${colors.foreground}
-label-active-background = #444
+label-active-foreground = #000000
+label-active-background = #2477c6
 ;label-active-underline= #0ff000
 label-active-padding = 1
 
