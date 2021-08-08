@@ -1,0 +1,6 @@
+#!/bin/sh
+lxpolkit &
+picom --experimental-backends &
+xsetroot -cursor_name left_ptr &
+#pasystray --notify=all &
+#nitrogen --restore &
