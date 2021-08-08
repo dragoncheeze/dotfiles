@@ -20,7 +20,7 @@ super + shift + b
 super + p
 	drun
 super + shift + p
-    dmenu_run -nb black -i -fn 'Ubuntu-16'
+    dmenu_run -nb black -i -fn 'Ubuntu-12' -sb '#2477c6' -sf black
 
 # screenshot
 super + shift + s
