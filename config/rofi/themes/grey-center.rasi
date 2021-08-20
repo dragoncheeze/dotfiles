@@ -11,12 +11,12 @@
     text-color:                  #bbbbbb;
     font:                        "monospace 12";
     prompt-font:                 "monospace 12";
-    prompt-background:           #444444;
+    prompt-background:           #bbbbbb;
     prompt-foreground:           black;
     prompt-padding:              4px;
 /*    alternate-normal-background: #1c1f24;
     alternate-normal-foreground: @text-color; */
-    selected-normal-background:  #444444;
+    selected-normal-background:  #bbbbbb;
     selected-normal-foreground:  black;
     spacing:                     3;
 }
