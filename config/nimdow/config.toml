@@ -27,6 +27,18 @@ keys = [ "q" ]
 modifiers = [ "super", "shift" ]
 
 [[startProcess]]
+command = "pactl set-sink-volume 0 +5%"
+keys = [ "XF86AudioRaiseVolume" ]
+
+[[startProcess]]
+command = "pactl set-sink-volume 0 -5%"
+keys = [ "XF86AudioLowerVolume" ]
+
+[[startProcess]]
+command = "pactl set-sink-mute 0 toggle"
+keys = [ "XF86AudioMute" ]
+
+[[startProcess]]
 command = "brave-browser"
 keys = [ "b" ]
 modifiers = [ "super" ]
