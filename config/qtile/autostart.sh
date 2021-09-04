@@ -2,5 +2,5 @@
 lxpolkit &
 picom --experimental-backends &
 #sxhkd -c ~/.config/qtile/sxhkdrc &
-pasystray --notify=all &
-nitrogen --restore &
+#pasystray --notify=all &
+#nitrogen --restore &

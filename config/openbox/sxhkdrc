@@ -10,10 +10,6 @@ super + Return
 super + n
    thunar
 
-# screenshot
-super + s
-   scrot
-
 # launch browser
 super + b
     brave-browser

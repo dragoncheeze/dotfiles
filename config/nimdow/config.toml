@@ -44,7 +44,7 @@ keys = [ "b" ]
 modifiers = [ "super" ]
 
 [[startProcess]]
-command = "dmenu_run"
+command = "dmenu_run -nb black -i -fn 'Ubuntu-12' -sb '#50fa7b' -sf black"
 keys = [ "p" ]
 modifiers = [ "super" ]
 

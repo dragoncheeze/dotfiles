@@ -32,7 +32,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "st"
 browser = "qutebrowser"
 filemanager = "pcmanfm"
 rofi = "drun"
@@ -95,9 +95,9 @@ keys = [
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
     # Sound
-    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 1 toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 1 -5%")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 1 +5%")),
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5%")),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -118,7 +118,7 @@ for i in groups:
     ])
 
 layout_theme = {"border_width": 2,
-                "margin": 8,
+                "margin": 5,
                 "border_focus": "2477c6",
                 "border_normal": "1D2330"
                 }
