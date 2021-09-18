@@ -7,7 +7,7 @@
 
 * {
     background-color:            #282828;
-    border-color:                #98971a;
+    border-color:                #d65d0e;
     text-color:                  #ebdbb2;
     font:                        "monospace 12";
     prompt-font:                 "monospace 12";
