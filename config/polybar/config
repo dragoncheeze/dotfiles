@@ -68,7 +68,7 @@ font-0 = Ubuntu:pixelsize=16;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = memory cpu date
+modules-right = battery wlan memory cpu date
 
 tray-position = right
 tray-padding = 2
@@ -168,8 +168,8 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected> <ramp-signal>
-format-connected-underline = #9f78e1
-label-connected = "net: "
+format-connected-background = #9f78e1
+label-connected = " net: "
 label-connected-foreground = ${colors.foreground-alt}
 
 format-disconnected =
@@ -279,14 +279,14 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline =	#ffff80
+format-charging-underline =	#83a598
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "full: "
+format-full-prefix = " full: "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-background = ${self.format-charging-underline}
 
 ramp-capacity-0 =
 ramp-capacity-1 =
