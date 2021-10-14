@@ -1,0 +1,27 @@
+Fixes build on 5.14.6 kernels.
+Index: nvidia-current-470.57.02/common/inc/nv-time.h
+===================================================================
+--- nvidia-current-470.57.02.orig/common/inc/nv-time.h
++++ nvidia-current-470.57.02/common/inc/nv-time.h
+@@ -214,7 +214,7 @@ static inline NV_STATUS nv_sleep_ms(unsi
+         // the requested timeout has expired, loop until less
+         // than a jiffie of the desired delay remains.
+         //
+-        current->state = TASK_INTERRUPTIBLE;
++        current->__state = TASK_INTERRUPTIBLE;
+         do
+         {
+             schedule_timeout(jiffies);
+Index: nvidia-current-470.57.02/nvidia-drm/nvidia-drm-drv.c
+===================================================================
+--- nvidia-current-470.57.02.orig/nvidia-drm/nvidia-drm-drv.c
++++ nvidia-current-470.57.02/nvidia-drm/nvidia-drm-drv.c
+@@ -922,7 +922,7 @@ static void nv_drm_register_drm_device(c
+     dev->dev_private = nv_dev;
+     nv_dev->dev = dev;
+     if (device->bus == &pci_bus_type) {
+-        dev->pdev = to_pci_dev(device);
++        dev->dev = device;
+     }
+
+     /* Register DRM device to DRM sub-system */
