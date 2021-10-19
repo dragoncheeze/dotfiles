@@ -31,19 +31,19 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #000000
-background = #000000
+background = #282828
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #5294e2
+foreground = #ebdbb2
+foreground-alt = #665c54
+primary = #458588
 secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 20
+height = 25
 offset-x = 0
 offset-y = 0
 radius = 0.0
@@ -64,18 +64,17 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu:pixelsize=15;1
-font-1 = font-awesome:pixelsize=15;1
+font-0 = Ubuntu:pixelsize=16;1
 
 modules-left = ewmh
 modules-center = xwindow
-modules-right =  memory cpu battery wlan date
+modules-right = battery wlan memory cpu date
 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
@@ -123,8 +122,8 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.primary}
+;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -148,17 +147,19 @@ label-empty-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "cpu: "
-format-prefix-foreground = #d25252
-;format-underline = #d25252
+format-prefix = " cpu: "
+format-prefix-foreground = ${colors.foreground-alt}
+format-background = #98971a
+;format-underline = #cc241d
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "ram: "
-format-prefix-foreground = #8aff80
-;format-underline = #8aff80
+format-prefix = " ram: "
+format-prefix-foreground = ${colors.foreground-alt}
+format-background = #689d6a
+;format-underline = #689d6a
 label = %percentage_used%%
 
 [module/wlan]
@@ -167,9 +168,9 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected> <ramp-signal>
-;format-connected-underline = #9f78e1
-label-connected = "net: "
-label-connected-foreground = #9f78e1
+format-connected-background = #9f78e1
+label-connected = " net: "
+label-connected-foreground = ${colors.foreground-alt}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -204,11 +205,6 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-format-foreground = #39679e
-format-background = #000000
-
-
-
 date = " %a %b %d  "
 date-alt =
 
@@ -217,7 +213,7 @@ time-alt = %I:%M
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #5294e2
+format-background = #458588
 
 label = %date% %time%
 
@@ -225,7 +221,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =  muted
@@ -240,7 +236,7 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator =
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -283,30 +279,30 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-;format-charging-underline =	#ffff80
+format-charging-background =	#83a598
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-background = ${self.format-charging-background}
 
-format-full-prefix = "full: "
-format-full-prefix-foreground = #ffff80
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix = " full: "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-background = ${self.format-charging-background}
 
 ramp-capacity-0 =
 ramp-capacity-1 =
 ramp-capacity-2 =
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = "ac: "
-animation-charging-1 = "ac: "
-animation-charging-2 = "ac: "
+animation-charging-0 = " ac: "
+animation-charging-1 = " ac: "
+animation-charging-2 = " ac: "
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = "batt: "
-animation-discharging-1 = "batt: "
-animation-discharging-2 = "batt: "
-animation-discharging-foreground = #ffff80
+animation-discharging-0 = " batt: "
+animation-discharging-1 = " batt: "
+animation-discharging-2 = " batt: "
+animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
 
@@ -371,7 +367,6 @@ margin-top = 5
 margin-bottom = 0
 
 ; vim:ft=dosini
-
 [module/ewmh]
 type = internal/xworkspaces
 
@@ -399,8 +394,8 @@ format = <label-state>
 label-monitor = %name%
 
 label-active = %name%
-label-active-foreground = #000000
-label-active-background = #2477c6
+label-active-foreground = #ebdbb2
+label-active-background = #458588
 ;label-active-underline= #0ff000
 label-active-padding = 1
 

@@ -11,7 +11,7 @@ hc emit_hook reload
 #xsetroot -solid '#5A8E3A'
 lxpolkit &
 picom --experimental-backends &
-#nitrogen --restore &
+nitrogen --restore &
 #feh --bg-scale ~/Pictures/green-fractal.jpg
 #dunst &
 #killall pasystray
@@ -28,13 +28,13 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-x close
-hc keybind $Mod-Return spawn xterm
+hc keybind $Mod-Return spawn st
 
-hc keybind $Mod-Shift-p spawn rofi -show drun
-hc keybind $Mod-p spawn dmenu_run -nb black -sb '#bbbbbb' -sf black -i -fn 'UbuntuMono-10'
+hc keybind $Mod-p spawn rofi -show drun
+hc keybind $Mod-Shift-p spawn dmenu_run -nb '#282828' -sb '#458588' -sf '#ebdbb2' -i -fn 'UbuntuMono-17'
 hc keybind $Mod-n spawn pcmanfm
-hc keybind $Mod-b spawn qutebrowser
-hc keybind $Mod-Shift-b spawn brave-browser
+hc keybind $Mod-b spawn brave-browser
+hc keybind $Mod-Shift-b spawn qutebrowser
 hc keybind $Mod-g spawn Lutris
 #hc keybind $Mod-Shift-s spawn scrot
 
@@ -125,13 +125,13 @@ hc keybind $Mod-i jumpto urgent
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#bbbbbb'
+hc set frame_border_active_color '#d65d0e'
 hc set frame_border_normal_color '#555'
 hc set frame_bg_normal_color '#000000'
 hc set frame_bg_active_color '#000000'
-hc set frame_border_width 1
+hc set frame_border_width 3
 hc set always_show_frame on
-hc set frame_bg_transparent off
+hc set frame_bg_transparent on
 hc set frame_transparent_width 0
 hc set frame_gap 5
 
@@ -141,11 +141,11 @@ hc attr theme.urgent.color orange
 hc attr theme.inner_width 0
 hc attr theme.inner_color black
 hc attr theme.border_width 1
-hc attr theme.floating.border_width 1
-hc attr theme.floating.outer_width 2
+hc attr theme.floating.border_width 3
+hc attr theme.floating.outer_width 3
 hc attr theme.floating.outer_color '#555555'
 c attr theme.active.inner_color '#000000'
-hc attr theme.active.outer_color '#bbbbbb'
+hc attr theme.active.outer_color '#d65d0e'
 hc attr theme.background_color '#000000'
 
 
@@ -193,8 +193,8 @@ hc unlock
 # hc detect_monitors
 
 # find the panel
-panel=~/.config/herbstluftwm/panel2.sh
-[ -x "$panel" ] || panel=/home/colby/.config/herbstluftwm/panel2.sh
+panel=~/.config/herbstluftwm/panel.sh
+[ -x "$panel" ] || panel=/home/colby/.config/herbstluftwm/panel.sh
 for monitor in $(hc list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" "$monitor" &
