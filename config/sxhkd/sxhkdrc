@@ -22,7 +22,7 @@ super + c
     xclock -d -brief -twelve -face Ubuntu-24
 # program launcher
 super + p
-	drun
+	rofi -show drun
 super + shift + p
     dmenu_run -nb '#282828' -i -fn 'Ubuntu-16' -sb '#458588' -sf '#282828'
 
