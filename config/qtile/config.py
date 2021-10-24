@@ -32,10 +32,10 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "st"
-browser = "qutebrowser"
+terminal = "alacritty"
+browser = "brave"
 filemanager = "pcmanfm"
-rofi = "drun"
+rofi = "rofi -show drun"
 qute = "chormium"
 dmenu = "dmenu_run -nb black -i -fn 'Ubuntu-14'"
 screenshot = "scrot"
@@ -117,10 +117,10 @@ for i in groups:
             desc="move focused window to group {}".format(i.name)),
     ])
 
-layout_theme = {"border_width": 2,
+layout_theme = {"border_width": 3,
                 "margin": 5,
-                "border_focus": "2477c6",
-                "border_normal": "1D2330"
+                "border_focus": "d65d0e",
+                "border_normal": "1d2021"
                 }
 
 layouts = [
@@ -151,32 +151,32 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Image(filename='~/.config/qtile/debian-26.png', scale='false'),
-                widget.GroupBox(),
+                #widget.Image(filename='~/.config/qtile/debian-26.png', scale='false'),
+                widget.GroupBox(active = '#ebdbb2', this_current_screen_border = '#458588'),
                 #widget.CurrentLayoutIcon(),
                 #widget.CurrentLayout(),
                 widget.Prompt(),
                 widget.Sep(linewidth = 0, padding = 50),
-                widget.WindowName(),
+                widget.WindowName(foreground = '#ebdbb2'),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                #widget.Battery(format='batt: {char} {percent:2.0%}', charge_char='+', discharge_char='-', foreground='#ffff80'),
+                widget.Battery(format='batt: {char} {percent:2.0%}', charge_char='+', discharge_char='-', foreground='#d79921'),
                 widget.Sep(),
-                widget.CPU(format='cpu: {load_percent}%', foreground='#ff5555',),
+                widget.CPU(format='cpu: {load_percent}%', foreground='#cc241d',),
                 widget.Sep(),
-                widget.Memory(format='mem:{MemUsed: .0f}{mm}', foreground='#50fa7b',),
+                widget.Memory(format='mem:{MemUsed: .0f}{mm}', foreground='#689d6a',),
                 widget.Sep(),
-                widget.TextBox(text='vol:', foreground='#bd93f9'),
-                widget.Volume(foreground='#bd93f9'),
+                widget.TextBox(text='vol:', foreground='#b16286'),
+                widget.Volume(foreground='#b16286'),
                 widget.Sep(),
-                widget.Clock(format='%a %b %d  %I:%M %p', foreground='#6272a4'),
+                widget.Clock(format='%a %b %d  %I:%M %p', foreground='#458588'),
                 widget.Systray(),
             ],
-            24,
+            24, background = '#282828'
         ),
     ),
 ]
@@ -195,7 +195,7 @@ dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(border_width=2, border_focus='2477c6', float_rules=[
+floating_layout = layout.Floating(border_width=3, border_focus='d65d0e', float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
