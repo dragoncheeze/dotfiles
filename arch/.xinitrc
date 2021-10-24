@@ -5,7 +5,7 @@ xrandr --dpi 96
 
 # WINDOW MANAGERS
 #exec i3
-#exec herbstlulfwm --locked
+#exec herbstluftwm --locked
 #exec spectrwm
 exec bspwm
 #
