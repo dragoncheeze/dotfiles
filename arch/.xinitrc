@@ -9,6 +9,10 @@ xrandr --dpi 96
 #exec spectrwm
 exec bspwm
 #
+# QTILE
+#qtstart &
+#qtile start
+#
 # DWM
 #dwmstart &
 #exec dwm
