@@ -1,3 +1,3 @@
 #!/bin/sh
 yay -S informant &&
-sudo usrmod -a -G informant colby
+sudo usermod -a -G informant colby
