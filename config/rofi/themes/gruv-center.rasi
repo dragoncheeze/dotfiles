@@ -21,7 +21,7 @@
     spacing:                     3;
 }
 #window {
-    border:  2;
+    border:  3;
     padding: 5;
 }
 #mainbox {
