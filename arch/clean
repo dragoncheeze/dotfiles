@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo pacman -Scc --noconfirm
+sudo pacman -Scc
