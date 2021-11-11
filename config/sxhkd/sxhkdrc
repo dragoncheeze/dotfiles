@@ -12,7 +12,7 @@ super + n
 
 # launch browser
 super + b
-    brave-browser
+    brave
 
 # launche qutebrowser
 super + shift + b
