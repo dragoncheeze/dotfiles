@@ -1,5 +1,8 @@
 #!/bin/sh
 sudo apt-get install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3 -yy &&
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
+rustup override set stable &&
+rustup update stable &&
 cd ~/builds/
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty/

@@ -329,7 +329,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- ROFI
-    awful.key({ modkey },            "p",     function () awful.util.spawn("drun") end,
+    awful.key({ modkey },            "p",     function () awful.util.spawn("rofi -show drun -show-icons") end,
               {description = "rofi", group = "launcher"}),
    -- Brave
     awful.key({ modkey },            "b",     function () awful.util.spawn("brave-browser") end,
@@ -337,7 +337,7 @@ globalkeys = gears.table.join(
    -- PCMANFM
     awful.key({ modkey },            "n",     function () awful.util.spawn("pcmanfm") end,
               {description = "pcmanfm", group = "launcher"}),
-              
+
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),

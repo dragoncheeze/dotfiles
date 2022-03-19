@@ -1,0 +1,2 @@
+#!/bin/bash
+j4-dmenu-desktop --dmenu="dmenu -i -m dmenumon -fn 'Ubuntu-10' -nb '#282828' -nf '#ebdbb2' -sb '#98971a' -sf '#282828'"

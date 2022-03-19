@@ -1,0 +1,3 @@
+#!/bin/sh
+# Default programs
+sudo xbps-install linux-headers base-devel pulseaudio libpulseaudio-32bit xclip freetype freetype-32bit fontconfig-devel libX11-devel libXft-devel elogind eudev xorg nvidia nvidia-dkms nvidia-libs nvidia-libs-32bit vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit cups ipp-usb ghostscript xorg-apps python fuse dunst wine lutris alacritty chromium yt-dlp dmenu ttf-ubuntu-font-family gnutls-32bit libldap-32bit libgpg-error-32bit sqlite-32bit libpulseaudio-32bit alsa-plugins-32bit picom lxappearance conky pavucontrol pulsemixer papirus-icon-theme pcmanfm gvfs xarchiver rofi galculator-gtk3 geany qutebrowser lxsession curl wget cargo sxiv scrot nitrogen alsa-utils neofetch htop mpv polybar bspwm sxhkd -yy

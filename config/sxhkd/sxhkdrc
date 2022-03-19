@@ -12,14 +12,20 @@ super + n
 
 # launch browser
 super + b
-    brave
+    brave-browser
 
-# launche qutebrowser
+# qutebrowser
 super + shift + b
     qutebrowser
+
+# lutris
+super + g
+	lutris
+	
 # clock
 super + c
     xclock -d -brief -twelve -face Ubuntu-24
+
 # program launcher
 super + p
 	rofi -show drun -show-icons
@@ -68,7 +74,7 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
-super + g
+super + shift + g
 	bspc node -s biggest.window
 
 #

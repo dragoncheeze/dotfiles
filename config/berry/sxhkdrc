@@ -1,0 +1,91 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	alacritty
+
+# run file manager
+super + n
+   pcmanfm
+
+# launch browser
+super + b
+    brave-browser
+
+# qutebrowser
+super + shift + b
+    qutebrowser
+
+# lutris
+super + g
+	lutris
+
+# clock
+super + c
+    xclock -d -brief -twelve -face Ubuntu-24
+
+# program launcher
+super + p
+	rofi -show drun -show-icons
+super + shift + p
+    dmenu_run -nb '#282828' -i -fn 'Ubuntu-16' -sb '#458588' -sf '#282828'
+
+# screenshot
+super + shift + s
+    scrot
+
+# program launcher
+super + p
+	rofi -show drun -show-icons
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# berry hotkeys
+#
+
+super + {h, j, k, l}
+    berryc window_move {-50 0, 0 50, 0 -50, 50 0}
+
+super + shift +  {h, j, k, l}
+    berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
+
+super + {1-9}
+    berryc switch_workspace {0-9}
+
+super + shift + {1-9}
+    berryc send_to_workspace {0-9}
+
+super + m
+    berryc window_monocle
+
+super + f
+    berryc fullscreen
+
+super + o
+    berryc snap_right
+
+super + i
+    berryc snap_left
+
+super + n
+    berryc toggle_decorations
+
+super + Tab
+    berryc cycle_focus
+
+super + x
+    berryc window_close
+
+super + c
+    berryc window_center
+
+super + shift + q
+    berryc quit
+
+~button1
+    berryc pointer_focus
