@@ -4,11 +4,11 @@
 sxhkd &
 xsetroot -cursor_name left_ptr &
 lxpolkit &
-picom --experimental-backends &
+pipewire &
+pipewire-pulse &
+picom &
 killall polybar
-polybar -c ~/.config/polybar/config example &
-#killall pasystray
-#pasystray --notify=all &
+$HOME/.config/polybar/launch.sh
 nitrogen --restore &
 
 bspc monitor -d I II III IV V

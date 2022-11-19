@@ -1,3 +1,4 @@
 alias v="nvim"
-alias reboot="systemctl reboot"
-alias shutdown="systemctl poweroff"
+alias reboot="loginctl reboot"
+alias shutdown="loginctl poweroff"
+alias backports="sudo apt -t bullseye-backports install"

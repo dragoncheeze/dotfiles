@@ -151,7 +151,7 @@ hc attr theme.border_width 2
 hc attr theme.floating.border_width 3
 hc attr theme.floating.outer_width 3
 hc attr theme.floating.outer_color '#555555'
-c attr theme.active.inner_color '#000000'
+hc attr theme.active.inner_color '#000000'
 hc attr theme.active.outer_color '#d65d0e'
 hc attr theme.background_color '#000000'
 
