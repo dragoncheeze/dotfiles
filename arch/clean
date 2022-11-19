@@ -1,2 +1,4 @@
 #!/bin/bash
-sudo pacman -Scc
+#sudo paccache -r
+#sudo pacman -Scc
+yay -Sc
