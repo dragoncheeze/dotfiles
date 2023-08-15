@@ -49,11 +49,11 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/theme.lua")
+beautiful.init("~/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
-editor = "nvim"
+terminal = "st -e fish"
+editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -66,8 +66,8 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
+    awful.layout.suit.floating,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
@@ -121,11 +121,11 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
---mykeyboardlayout = awful.widget.keyboardlayout()
+mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock(" %a %b %d, %I:%M %p")
+mytextclock = wibox.widget.textclock("%a %b %d, %l:%M %p ")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -228,9 +228,8 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            require("battery-widget") {},
-            mytextclock,
             wibox.widget.systray(),
+            mytextclock,
             s.mylayoutbox,
         },
     }
@@ -328,21 +327,16 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- ROFI
-    awful.key({ modkey },            "p",     function () awful.util.spawn("rofi -show drun -show-icons") end,
-              {description = "rofi", group = "launcher"}),
-   -- Brave
-    awful.key({ modkey },            "b",     function () awful.util.spawn("brave-browser") end,
-              {description = "brave", group = "launcher"}),
-   -- PCMANFM
-    awful.key({ modkey },            "n",     function () awful.util.spawn("pcmanfm") end,
-              {description = "pcmanfm", group = "launcher"}),
-
     -- Prompt
+    awful.key({ modkey },            "n",     function () awful.util.spawn("pcmanfm") end,
+              {description = "pcmanfm", group = "applications"}),
+    awful.key({ modkey },            "b",     function () awful.util.spawn("brave-browser") end,
+              {description = "brave", group = "applications"}),
+
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey }, "c",
+    awful.key({ modkey, "Shift"}, "x",
               function ()
                   awful.prompt.run {
                     prompt       = "Run Lua code: ",
@@ -351,7 +345,10 @@ globalkeys = gears.table.join(
                     history_path = awful.util.get_cache_dir() .. "/history_eval"
                   }
               end,
-              {description = "lua execute prompt", group = "awesome"})
+              {description = "lua execute prompt", group = "awesome"}),
+    -- Menubar
+    awful.key({ modkey }, "p", function() menubar.show() end,
+              {description = "show the menubar", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -371,13 +368,13 @@ clientkeys = gears.table.join(
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
---    awful.key({ modkey,           }, "n",
---        function (c)
+    awful.key({ modkey, "Shift"          }, "n",
+        function (c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
---            c.minimized = true
---       end ,
---       {description = "minimize", group = "client"}),
+            c.minimized = true
+        end ,
+        {description = "minimize", group = "client"}),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized = not c.maximized
@@ -471,10 +468,11 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { border_width = beautiful.border_width,
+      properties = { border_width = 3,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
+                     callback = awful.client.setslave,
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
@@ -585,9 +583,14 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("unfocus", function(c) c.border_color = "#282828" end)
 -- }}}
---autostart
+
+-- Gaps
+beautiful.useless_gap = 3
+
+-- Autostart Apps
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("lxpolkit")
+awful.spawn.with_shell("cbatticon")
 awful.spawn.with_shell("volumeicon")

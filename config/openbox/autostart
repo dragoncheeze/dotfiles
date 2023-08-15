@@ -1,0 +1,11 @@
+#!/bin/sh
+sxhkd -c ~/.config/openbox/sxhkdrc &
+lxpolkit &
+pipewire &
+pipewire-pulse &
+picom &
+tint2 &
+#polybar hlwm &
+#cbatticon &
+xfce4-power-manager &
+nitrogen --restore &

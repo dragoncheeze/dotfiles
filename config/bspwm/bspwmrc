@@ -4,8 +4,6 @@
 sxhkd &
 xsetroot -cursor_name left_ptr &
 lxpolkit &
-pipewire &
-pipewire-pulse &
 picom &
 killall polybar
 $HOME/.config/polybar/launch.sh

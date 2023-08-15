@@ -23,21 +23,22 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
+import os
+import subprocess
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "alacritty"
-browser = "brave"
-filemanager = "pcmanfm"
-rofi = "rofi -show drun"
-qute = "chormium"
-dmenu = "dmenu_run -nb black -i -fn 'Ubuntu-14'"
+terminal = "st"
+browser = "flatpak run com.brave.Browser"
+filemanager = "thunar"
+rofi = "rofi -show drun -show-icons"
+qute = "firefox"
+dmenu = "dmenu_run -nb '#282828' -i -fn 'Ubuntu-14'"
 screenshot = "scrot"
 keys = [
     # Switch between windows
@@ -170,11 +171,13 @@ screens = [
                 widget.Sep(),
                 widget.Memory(format='mem:{MemUsed: .0f}{mm}', foreground='#689d6a',),
                 widget.Sep(),
+                widget.Wlan(interface='wlp3s0',format='{essid} {percent:2.0%}', foreground='#458588',),
+                widget.Sep(),
                 widget.TextBox(text='vol:', foreground='#b16286'),
                 widget.Volume(foreground='#b16286'),
                 widget.Sep(),
-                widget.Clock(format='%a %b %d  %I:%M %p', foreground='#458588'),
                 widget.Systray(),
+                widget.Clock(format='%a %b %d  %l:%M %p', foreground='#ebddb2'),
             ],
             24, background = '#282828'
         ),
@@ -217,10 +220,10 @@ reconfigure_screens = True
 auto_minimize = True
 
 # autostart
-#@hook.subscribe.startup_once
-#def start_once():
-#    home = os.path.expanduser('~')
-#    subprocess.call([home + '/.config/qtile/autostart.sh'])
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
@@ -230,4 +233,4 @@ auto_minimize = True
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile"

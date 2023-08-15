@@ -12,13 +12,12 @@ super + n
 
 # launch browser
 super + b
-    brave-browser
-# launche qutebrowser
-super + shift + b
-    qutebrowser
+   flatpak run com.brave.Browser
+
 # program launcher
 super + p
-	drun
+	rofi -show drun -show-icons
+
 super + shift + p
     dmenu_run -nb black -i -fn 'Ubuntu-16'
 # make sxhkd reload its configuration files:

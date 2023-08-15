@@ -4,27 +4,23 @@
 
 # terminal emulator
 super + Return
-   alacritty
+   st
 
 # run file manager
 super + n
-   thunar
+   pcmanfm
 
 # launch browser
 super + b
-    flatpak run com.brave.Browser
-
-# qutebrowser
-super + shift + b
-    qutebrowser
+    brave-browser
 
 # lutris
 super + g
 	lutris
-
+	
 # clock
-super + c
-    xclock -d -brief -twelve -face Ubuntu-24
+#super + c
+#    xclock -d -brief -twelve -face Ubuntu-24
 
 # program launcher
 super + p
@@ -48,11 +44,21 @@ XF86AudioLowerVolume
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+#Media Keys
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioStop
+    playerctl stop
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl previous
+
 # Backlight
 XF86MonBrightnessUp
-    brightnessctl set 500+
+    light -A 10
 XF86MonBrightnessDown
-    brightnessctl set 500-
+    light -U 10
 
 # bspwm hotkeys
 #
