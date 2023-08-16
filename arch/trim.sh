@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo systemctl enable fstrim.timer
+sudo systemctl enable --now fstrim.timer
