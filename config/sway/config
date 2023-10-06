@@ -8,7 +8,6 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-exec waybar
 exec lxpolkit
 exec_always autotiling
 # Home row direction keys, like vim
@@ -22,7 +21,7 @@ set $term foot
 set $menu wofi -S drun -I
 
 ### Output configuration
-output * bg ~/builds/dotfiles/themes/wallpaper/fractal.jpg fill
+output * bg ~/builds/wallpaper/fractal.jpg fill
 
 # Example configuration:
 #
@@ -195,12 +194,23 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+bar {
+    position top
+    status_command while date +'%a-%b-%d %l:%M %p'; do sleep 1; done
 
+    colors {
+	statusline #ffffff
+        background #44475a
+        focused_workspace #44475a #6272a4 #f8f8f2
+        inactive_workspace #282a36 #282a36 #5c5c5c
+    }
+}
+#
+# gaps
 default_border pixel 5
 default_floating_border pixel 5
 gaps inner 10
