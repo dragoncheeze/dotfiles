@@ -18,7 +18,7 @@ set $right l
 
 # Variables
 set $term foot
-set $menu wofi -S drun -I
+set $menu rofi -show drun -show-icons
 
 ### Output configuration
 output * bg ~/builds/wallpaper/fractal.jpg fill
