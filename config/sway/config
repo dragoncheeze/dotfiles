@@ -21,7 +21,7 @@ set $term foot
 set $menu rofi -show drun -show-icons
 
 ### Output configuration
-output * bg ~/builds/wallpaper/fractal.jpg fill
+output * bg ~/builds/wallpaper/arch.png fill
 
 # Example configuration:
 #
@@ -63,7 +63,8 @@ output * bg ~/builds/wallpaper/fractal.jpg fill
     # Start a terminal
     bindsym $mod+Return exec $term
     bindsym $mod+n exec thunar
-    bindsym $mod+b exec firefox
+    bindsym $mod+g exec lutris
+    bindsym $mod+b exec thorium-browser
     # Kill focused window
     bindsym $mod+x kill
 
@@ -200,7 +201,8 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    status_command while date +'%a-%b-%d %l:%M %p'; do sleep 1; done
+    status_command i3status
+    #status_command while date +'%a-%b-%d %l:%M %p'; do sleep 1; done
 
     colors {
 	statusline #ffffff
@@ -211,9 +213,9 @@ bar {
 }
 #
 # gaps
-default_border pixel 5
-default_floating_border pixel 5
-gaps inner 10
+default_border pixel 2
+default_floating_border pixel 2
+gaps inner 5
 gaps outer 0
 
 include ~/.config/sway/conf.d/*
