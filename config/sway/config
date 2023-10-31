@@ -21,7 +21,7 @@ set $term foot
 set $menu rofi -show drun -show-icons
 
 ### Output configuration
-output * bg ~/builds/wallpaper/arch.png fill
+output * bg ~/builds/wallpaper/debian.png fill
 
 # Example configuration:
 #
@@ -63,8 +63,8 @@ output * bg ~/builds/wallpaper/arch.png fill
     # Start a terminal
     bindsym $mod+Return exec $term
     bindsym $mod+n exec thunar
-    bindsym $mod+g exec lutris
-    bindsym $mod+b exec thorium-browser
+    bindsym $mod+g exec flatpak run net.lutris.Lutris
+    bindsym $mod+b exec brave-browser
     # Kill focused window
     bindsym $mod+x kill
 
