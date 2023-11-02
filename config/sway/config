@@ -21,7 +21,7 @@ set $term foot
 set $menu rofi -show drun -show-icons
 
 ### Output configuration
-output * bg ~/builds/wallpaper/debian.png fill
+output * bg ~/builds/wallpaper/arch.png fill
 
 # Example configuration:
 #
