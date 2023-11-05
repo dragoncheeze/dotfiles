@@ -63,7 +63,7 @@ output * bg ~/builds/wallpaper/arch.png fill
     # Start a terminal
     bindsym $mod+Return exec $term
     bindsym $mod+n exec thunar
-    bindsym $mod+g exec lutris
+    bindsym $mod+g exec flatpak run net.lutris.Lutris
     bindsym $mod+b exec brave
     # Kill focused window
     bindsym $mod+x kill
