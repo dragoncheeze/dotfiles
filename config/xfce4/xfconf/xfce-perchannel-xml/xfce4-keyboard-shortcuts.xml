@@ -179,12 +179,12 @@
       <property name="&lt;Super&gt;2" type="string" value="workspace_2_key"/>
       <property name="&lt;Super&gt;3" type="string" value="workspace_3_key"/>
       <property name="&lt;Super&gt;4" type="string" value="workspace_4_key"/>
-      <property name="&lt;Super&gt;Left" type="string" value="tile_left_key"/>
-      <property name="&lt;Super&gt;Right" type="string" value="tile_right_key"/>
       <property name="&lt;Super&gt;x" type="string" value="close_window_key"/>
       <property name="&lt;Super&gt;m" type="string" value="maximize_window_key"/>
-      <property name="&lt;Super&gt;Up" type="string" value="tile_up_key"/>
-      <property name="&lt;Super&gt;Down" type="string" value="tile_down_key"/>
+      <property name="&lt;Super&gt;k" type="string" value="tile_up_key"/>
+      <property name="&lt;Super&gt;j" type="string" value="tile_down_key"/>
+      <property name="&lt;Super&gt;h" type="string" value="tile_left_key"/>
+      <property name="&lt;Super&gt;l" type="string" value="tile_right_key"/>
     </property>
   </property>
   <property name="providers" type="array">

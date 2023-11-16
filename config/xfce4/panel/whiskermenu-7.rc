@@ -1,5 +1,5 @@
-favorites=org.mozilla.firefox.desktop,net.lutris.Lutris.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop,galculator.desktop,atril.desktop
-recent=xfce-keyboard-settings.desktop,org.gnome.SimpleScan.desktop,atril.desktop,galculator.desktop,xsane.desktop,system-config-printer.desktop,xfce4-web-browser.desktop,org.xfce.mousepad.desktop,org.xfce.ristretto.desktop,xfce4-terminal-emulator.desktop
+favorites=org.mozilla.firefox.desktop,net.lutris.Lutris.desktop,galculator.desktop,atril.desktop,org.gnome.SimpleScan.desktop
+recent=synaptic.desktop,org.gnome.SimpleScan.desktop,xfce4-terminal-emulator.desktop,com.axosoft.GitKraken.desktop,xfce-keyboard-settings.desktop,atril.desktop,galculator.desktop,xsane.desktop,system-config-printer.desktop,xfce4-web-browser.desktop
 button-icon=distributor-logo-devuan
 button-single-row=false
 show-button-title=false
