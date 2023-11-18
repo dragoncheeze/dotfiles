@@ -328,11 +328,6 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "n",     function () awful.util.spawn("pcmanfm") end,
-              {description = "pcmanfm", group = "applications"}),
-    awful.key({ modkey },            "b",     function () awful.util.spawn("brave-browser") end,
-              {description = "brave", group = "applications"}),
-
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
@@ -479,7 +474,9 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
-
+    -- Fullscreen clients.
+    { rule = { class = "wow.exe" },
+    properties = {fullscreen = true}},
     -- Floating clients.
     { rule_any = {
         instance = {
@@ -494,6 +491,8 @@ awful.rules.rules = {
           "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
+          "battle.net.exe",
+          "Lutris",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
@@ -586,11 +585,21 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = "#282828" end)
 -- }}}
 
+-- fix fullscreen
+client.connect_signal("property::fullscreen", function(c)
+  if c.fullscreen then
+    gears.timer.delayed_call(function()
+      if c.valid then
+        c:geometry(c.screen.geometry)
+      end
+    end)
+  end
+end)
+
 -- Gaps
 beautiful.useless_gap = 3
 
 -- Autostart Apps
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("lxpolkit")
-awful.spawn.with_shell("cbatticon")
-awful.spawn.with_shell("volumeicon")
+awful.spawn.with_shell("sxhkd")
