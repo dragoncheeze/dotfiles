@@ -11,7 +11,7 @@ default_floating_border pixel 5
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id picom
 exec --no-startup-id lxpolkit
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
 #exec --no-startup-id nm-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
