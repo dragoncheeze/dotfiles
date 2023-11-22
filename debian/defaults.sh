@@ -14,9 +14,3 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 #flatpak --user override --filesystem=/home/$USER/.icons/:ro &&
 #flatpak --user override --filesystem=/usr/share/icons/:ro &&
 #sudo flatpak override --env=GTK_THEME=Arc-Dark &&
-
-## Brave
-#sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/#brave-browser-archive-keyring.gpg &&
-#echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable #main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list &&
-#sudo apt update &&
-#sudo apt install brave-browser -y
