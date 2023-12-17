@@ -4,7 +4,7 @@
 sxhkd &
 xsetroot -cursor_name left_ptr &
 lxpolkit &
-picom &
+picom --experimental-backends &
 killall polybar
 $HOME/.config/polybar/launch.sh
 feh --bg-fill ~/builds/wallpaper/debian.jpg
