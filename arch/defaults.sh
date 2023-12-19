@@ -7,4 +7,4 @@ yay -S rsync man pacman-contrib reflector xclip xorg-xinit cups ipp-usb \
     lib32-alsa-plugins picom lxappearance conky pipewire pavucontrol pulsemixer \
     pcmanfm gvfs xarchiver rofi galculator geany lxsession curl wget cargo sxiv \
     scrot feh alsa-utils neofetch htop powerline mpv gamemode \
-    polybar bspwm sxhkd playerctl -yy &&
+    polybar bspwm sxhkd playerctl -y
