@@ -4,11 +4,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
 source $HOME/.cargo/env &&
 rustup override set stable &&
 rustup update stable &&
-cd ~/builds/
-git clone https://github.com/alacritty/alacritty.git &&
-cd alacritty/
+git clone https://github.com/alacritty/alacritty.git ~/builds/alacritty &&
+cd ~/builds/alacritty/ &&
 cargo build --release &&
-sudo cp target/release/alacritty ~/bin/ &&
+sudo cp target/release/alacritty /usr/local/bin &&
 sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg &&
 sudo desktop-file-install extra/linux/Alacritty.desktop &&
 sudo update-desktop-database
