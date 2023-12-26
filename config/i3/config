@@ -9,10 +9,9 @@ default_border pixel 5
 default_floating_border pixel 5
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id picom
 exec --no-startup-id lxpolkit
-#exec --no-startup-id nitrogen --restore
-#exec --no-startup-id nm-applet
+exec_always --no-startup-id autotiling
+exec --no-startup-id feh --bg-fill ~/builds/wallpaper/tree.png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -26,10 +25,7 @@ bindsym $mod+b exec --no-startup-id brave-browser
 bindsym $mod+n exec --no-startup-id pcmanfm
 bindsym $mod+g exec --no-startup-id lutris
 
-for_window [class="battle.net.exe"] floating enable
-for_window [class="Lutris"] floating enable
-for_window [class="Galculator"] floating enable
-# kill focused window
+#kill focused window
 bindsym $mod+x kill
 
 # start dmenu (a program launcher)
@@ -168,5 +164,12 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         position top
+    colors {
+    	statusline #ebdbb2
+        background #282828
+        focused_workspace #a89984 #458588 #ebdbb2
+        inactive_workspace #a89984 #282a36 #ebdbb2
+    }
+
 }
 include ~/.config/i3/conf.d/*
