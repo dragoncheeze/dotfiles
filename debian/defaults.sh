@@ -2,7 +2,7 @@
 ## Default programs
 sudo apt install xserver-xorg xorg lxpolkit rsync gtk2-engines-murrine \
     fonts-ubuntu fonts-dejavu fonts-font-awesome fonts-liberation2 \
-    fonts-noto fonts-roboto libxkbcommon-dev picom lxappearance conky \
+    fonts-noto fonts-roboto libxkbcommon-dev lxappearance \
     pavucontrol pulsemixer materia-gtk-theme arc-theme gnome-themes-extra \
     papirus-icon-theme pcmanfm xarchiver rofi libxft-dev libx11-dev libxinerama-dev \
     galculator geany dunst libnotify-bin suckless-tools build-essential curl \

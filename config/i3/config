@@ -11,7 +11,7 @@ default_floating_border pixel 5
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id lxpolkit
 exec_always --no-startup-id autotiling
-exec --no-startup-id feh --bg-fill ~/builds/wallpaper/tree.png
+exec --no-startup-id feh --bg-fill ~/builds/wallpaper/woods.png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
