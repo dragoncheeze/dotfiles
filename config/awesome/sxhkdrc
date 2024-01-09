@@ -1,0 +1,61 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+   st
+
+# run file manager
+super + n
+   pcmanfm
+
+# launch browser
+super + b
+    brave-browser
+
+# lutris
+super + g
+	flatpak run net.lutris.Lutris
+
+# clock
+#super + c
+#    xclock -d -brief -twelve -face Ubuntu-24
+
+# program launcher
+super + p
+	rofi -show drun -show-icons
+super + shift + p
+    dmenu_run -nb '#282828' -i -fn 'Ubuntu-16' -sb '#458588' -sf '#282828'
+
+# screenshot
+super + shift + s
+    scrot
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#Volume Control
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+#Media Keys
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioStop
+    playerctl stop
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl previous
+
+# Backlight
+#XF86MonBrightnessUp
+#    light -A 10
+#XF86MonBrightnessDown
+#    light -U 10

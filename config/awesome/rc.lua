@@ -603,6 +603,6 @@ end)
 beautiful.useless_gap = 3
 
 -- Autostart Apps
-awful.spawn.with_shell("picom")
+--awful.spawn.with_shell("picom")
 awful.spawn.with_shell("lxpolkit")
-awful.spawn.with_shell("sxhkd")
+awful.spawn.with_shell("sxhkd -c ~/.config/awesome/sxhkdrc")
