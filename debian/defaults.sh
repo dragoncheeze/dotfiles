@@ -7,5 +7,5 @@ sudo apt install xserver-xorg xorg lxpolkit rsync gtk2-engines-murrine \
     papirus-icon-theme pcmanfm xarchiver rofi libxft-dev libx11-dev libxinerama-dev \
     galculator geany dunst libnotify-bin suckless-tools build-essential curl \
     wget sxiv scrot feh neofetch htop mpv arc-theme synaptic gamemode wine \
-    polybar bspwm i3 i3status python3-i3ipc playerctl cups pipewire -y
+    i3status python3-i3ipc playerctl cups pipewire -y
 
