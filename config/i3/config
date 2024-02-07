@@ -23,7 +23,7 @@ bindsym $mod+Return exec --no-startup-id st
 #bindsym $mod+Escape exec i3-instant-layout --list | rofi -dmenu -i
 bindsym $mod+b exec --no-startup-id brave-browser
 bindsym $mod+n exec --no-startup-id pcmanfm
-bindsym $mod+g exec --no-startup-id lutris
+bindsym $mod+g exec --no-startup-id flatpak run net.lutris.Lutris
 
 #kill focused window
 bindsym $mod+x kill
