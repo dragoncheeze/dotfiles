@@ -1,7 +1,0 @@
-#!/bin/sh
-sxhkd -c ~/.config/openbox/sxhkdrc &
-picom &
-tint2 &
-cbatticon &
-nitrogen --restore &
-pasystray --notify=all &
