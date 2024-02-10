@@ -21,7 +21,7 @@ set $term foot
 set $menu rofi -show drun -show-icons
 
 ### Output configuration
-output * bg ~/builds/wallpaper/arch.png fill
+output * bg ~/builds/wallpaper/fractal.jpg fill mode 1920x1080@75Hz
 
 # Example configuration:
 #
@@ -62,9 +62,9 @@ output * bg ~/builds/wallpaper/arch.png fill
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+n exec thunar
+    bindsym $mod+n exec pcmanfm
     bindsym $mod+g exec flatpak run net.lutris.Lutris
-    bindsym $mod+b exec brave
+    bindsym $mod+b exec brave-browser
     # Kill focused window
     bindsym $mod+x kill
 
@@ -206,7 +206,7 @@ bar {
 
     colors {
 	statusline #ffffff
-        background #44475a
+        background #000000
         focused_workspace #44475a #6272a4 #f8f8f2
         inactive_workspace #282a36 #282a36 #5c5c5c
     }
