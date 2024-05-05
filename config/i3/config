@@ -22,7 +22,7 @@ bindsym $mod+Return exec --no-startup-id st
 
 # custom binds
 #bindsym $mod+Escape exec i3-instant-layout --list | rofi -dmenu -i
-bindsym $mod+b exec --no-startup-id brave-browser
+bindsym $mod+b exec --no-startup-id flatpak run org.mozilla.firefox
 bindsym $mod+n exec --no-startup-id pcmanfm
 bindsym $mod+g exec --no-startup-id flatpak run net.lutris.Lutris
 
