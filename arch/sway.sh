@@ -1,7 +1,7 @@
 #!/bin/bash
-yay -S --needed sway swaylock swayidle swaybg brave-bin autotiling i3status \
+sudo pacman -S --needed sway swaylock swayidle swaybg firefox i3status \
     foot rofi seatd playerctl arc-gtk-theme papirus-icon-theme \
-    lxappearance nwg-look-bin pipewire pipewire-pulse wireplumber wl-clipboard man-db neofetch \
+    lxappearance pipewire pipewire-pulse wireplumber wl-clipboard man-db fastfetch \
     gtk-engine-murrine mpd mpv xorg-xwayland gvfs file-roller lxsession \
     gamemode flatpak polkit cups ipp-usb ghostscript dunst imv libadwaita \
     gnome-themes-extra otf-font-awesome ttf-croscore ttf-dejavu ttf-droid \
