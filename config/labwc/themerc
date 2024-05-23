@@ -14,23 +14,23 @@ padding.height: 3
 # titlebar.height:
 
 # window border
-window.active.border.color: #eeeeee
-window.inactive.border.color: #bbbbbb
+window.active.border.color: #5294e2
+window.inactive.border.color: #282828
 
 # ToggleKeybinds status indicator
 window.active.indicator.toggled-keybind.color: #ff0000
 
 # window titlebar background
-window.active.title.bg.color: #282828
-window.inactive.title.bg.color: #000000
+window.active.title.bg.color: #404552
+window.inactive.title.bg.color: #383c4a
 
 # window titlebar text
-window.active.label.text.color: #000000
+window.active.label.text.color: #eeeeee
 window.inactive.label.text.color: #000000
 window.label.text.justify: center
 
 # window buttons
-window.active.button.unpressed.image.color: #000000
+window.active.button.unpressed.image.color: #eeeeee
 window.inactive.button.unpressed.image.color: #000000
 
 # window drop-shadows
@@ -49,9 +49,9 @@ menu.overlap.x: 0
 menu.overlap.y: 0
 menu.width.min: 20
 menu.width.max: 200
-menu.items.bg.color: #fcfbfa
-menu.items.text.color: #000000
-menu.items.active.bg.color: #e1dedb
+menu.items.bg.color: #404552
+menu.items.text.color: #eeeeee
+menu.items.active.bg.color: #5294e2
 menu.items.active.text.color: #000000
 menu.items.padding.x: 7
 menu.items.padding.y: 4
