@@ -1,6 +1,6 @@
 {
     "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
@@ -11,11 +11,12 @@
     // Modules configuration
      "hyprland/workspaces": {
          "active-only": false,
-         "persistent-workspaces": {
-             "*": 5
-         }
      },
-    "keyboard-state": {
+      "wlr/taskbar": {
+        "format": "{app_id}",
+        "on-click": "minimize-raise",
+         },
+      "keyboard-state": {
         "numlock": true,
         "capslock": true,
         "format": "{name} {icon}",
