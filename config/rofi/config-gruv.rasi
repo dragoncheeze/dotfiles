@@ -6,18 +6,18 @@
  */
 
 * {
-    background-color:            #000000;
-    border-color:                #77dd77;
-    text-color:                  #ffffff;
+    background-color:            #282828;
+    border-color:                #458588;
+    text-color:                  #ebdbb2;
     font:                        "Ubuntu 14";
     prompt-font:                 "Ubuntu 14";
-    prompt-background:           #77dd77;
-    prompt-foreground:           #000000;
+    prompt-background:           #458588;
+    prompt-foreground:           #282828;
     prompt-padding:              4px;
 /*    alternate-normal-background: #1c1f24;
     alternate-normal-foreground: @text-color; */
-    selected-normal-background:  #77dd77;
-    selected-normal-foreground:  #000000;
+    selected-normal-background:  #458588;
+    selected-normal-foreground:  #282828;
     spacing:                     3;
 }
 window {

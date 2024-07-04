@@ -1,7 +1,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-font pango:DejaVu Sans Mono 12
+font pango:monospace 16
 
 gaps inner 10
 gaps outer 0
@@ -12,7 +12,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id lxpolkit
 exec --no-startup-id picom
 exec_always --no-startup-id autotiling
-exec --no-startup-id feh --bg-fill ~/builds/wallpaper/woods.png
+exec --no-startup-id feh --bg-fill ~/builds/dotfiles/minimal-wallpaper/outrun.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -166,10 +166,10 @@ bar {
         status_command i3status
         position top
     colors {
-    	statusline #ebdbb2
-        background #282828
-        focused_workspace #a89984 #458588 #ebdbb2
-        inactive_workspace #a89984 #282a36 #ebdbb2
+    	statusline #ffffff
+        background #000000
+        focused_workspace  #77dd77 #200689 #ffffff
+        inactive_workspace #000000 #222222 #ffffff
     }
 
 }
