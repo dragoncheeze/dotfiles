@@ -3,7 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-
+font pango:monospace 16
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -21,7 +21,7 @@ set $term foot
 set $menu rofi -show drun -show-icons
 
 ### Output configuration
-output * bg ~/builds/wallpaper/fractal.jpg fill mode 1920x1080@75Hz
+output * bg ~/builds/dotfiles/minimal-wallpaper/outrun.jpg fill mode 1920x1080@75Hz
 
 # Example configuration:
 #
@@ -62,9 +62,9 @@ output * bg ~/builds/wallpaper/fractal.jpg fill mode 1920x1080@75Hz
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+n exec pcmanfm
-    bindsym $mod+g exec flatpak run net.lutris.Lutris
-    bindsym $mod+b exec brave-browser
+    bindsym $mod+n exec thunar
+    bindsym $mod+g exec lutris
+    bindsym $mod+b exec brave
     # Kill focused window
     bindsym $mod+x kill
 
@@ -207,15 +207,15 @@ bar {
     colors {
 	statusline #ffffff
         background #000000
-        focused_workspace #44475a #6272a4 #f8f8f2
-        inactive_workspace #282a36 #282a36 #5c5c5c
+        focused_workspace  #77dd77 #200689 #ffffff
+        inactive_workspace #000000 #222222 #ffffff
     }
 }
 #
 # gaps
-default_border pixel 2
-default_floating_border pixel 2
-gaps inner 5
+default_border pixel 5
+default_floating_border pixel 5
+gaps inner 10
 gaps outer 0
 
 include ~/.config/sway/conf.d/*
