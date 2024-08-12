@@ -7,7 +7,7 @@ sudo pacman -S --needed sway swaylock swayidle swaybg firefox i3status \
     gnome-themes-extra otf-font-awesome noto-fonts-emoji ttf-croscore ttf-dejavu ttf-droid \
     thunar thunar-archive-plugin thunar-volman tumbler fuse geany galculator \
     gnu-free-fonts ttf-liberation noto-fonts ttf-roboto ttf-ubuntu-font-family \
-    materia-gtk-theme nwg-look &&
+    materia-gtk-theme nwg-look noto-fonts-emoji &&
 # Cups
 sudo systemctl enable cups &&
 sudo systemctl start cups
