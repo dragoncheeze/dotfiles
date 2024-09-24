@@ -3,7 +3,7 @@ sudo dnf install sway thunar thunar-volman thunar-archive-plugin tumbler tumbler
     lxpolkit i3status python3-i3ipc firefox mpv cups avahi galculator gamemode imv \
     clipman playerctl papirus-icon-theme papirus-icon-theme-dark rofi dunst fastfetch \
     fuse geany evince simple-scan usbutils @multimedia @sound-and-video lxappearance \
-    gnome-themes-extra flatpak git fish neovim htop &&
+    gnome-themes-extra flatpak fish neovim htop &&
 # Autotiling
 git clone https://github.com/nwg-piotr/autotiling ~/builds/autotiling &&
     chmod +x ~/builds/autotiling/autotiling/main.py &&
