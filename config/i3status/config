@@ -32,7 +32,7 @@ ethernet _first_ {
 }
 
 volume master {
-        format = "♪: %volume"
+        format = "♪: %volume "
         format_muted = "♪: muted (%volume)"
         device = "pulse"
 }
@@ -58,5 +58,5 @@ memory {
 }
 
 tztime local {
-        format = "%a %b %d %l:%M %P"
+        format = " %a %b %d %l:%M %P "
 }
