@@ -4,7 +4,7 @@ sudo dnf install tar sway thunar thunar-volman thunar-archive-plugin tumbler tum
     clipman playerctl papirus-icon-theme papirus-icon-theme-dark rofi dunst fastfetch \
     fuse geany evince simple-scan usbutils @multimedia @sound-and-video lxappearance \
     fuse-libs file-roller gnome-themes-extra flatpak fish neovim htop  \
-    google-noto-emoji-fonts system-config-printer &&
+    google-noto-emoji-fonts system-config-printer wget &&
 # Autotiling
 git clone https://github.com/nwg-piotr/autotiling ~/builds/autotiling &&
     chmod +x ~/builds/autotiling/autotiling/main.py &&
