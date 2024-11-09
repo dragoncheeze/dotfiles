@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo pacman -S --needed vim pacman-contrib sway swaylock swayidle swaybg firefox i3status \
+sudo pacman -S --needed vim pacman-contrib sway swaylock swayidle swaybg i3status \
     foot rofi seatd playerctl arc-gtk-theme papirus-icon-theme rsync \
     lxappearance pipewire pipewire-pulse wireplumber wl-clipboard man-db fastfetch \
     gtk-engine-murrine mpd mpv xorg-xwayland gvfs xarchiver evince simple-scan lxsession \
