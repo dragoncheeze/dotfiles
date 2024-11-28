@@ -6,6 +6,6 @@ sudo apt install xserver-xorg xorg lxpolkit rsync gtk2-engines-murrine \
     pavucontrol pulsemixer materia-gtk-theme arc-theme gnome-themes-extra \
     papirus-icon-theme pcmanfm xarchiver rofi libxft-dev libx11-dev libxinerama-dev \
     galculator geany dunst libnotify-bin suckless-tools build-essential curl \
-    wget sxiv scrot feh htop mpv synaptic gamemode wine \
+    wget sxiv scrot feh htop mpv synaptic gamemode wine picom \
     i3status python3-i3ipc playerctl cups pipewire-audio libncurses-dev -y
 
