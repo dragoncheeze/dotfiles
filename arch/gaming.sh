@@ -9,4 +9,4 @@ lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32
 # AMD Drivers
 sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader &&
 # Lutris
-sudo pacman -S --needed lib32-vkd3d lib32-gamemode vulkan-tools protobuf vkd3d innoextract gamemode python-protobuf lutris
+sudo pacman -S --needed lib32-vkd3d lib32-gamemode vulkan-tools protobuf vkd3d innoextract gamemode lutris
