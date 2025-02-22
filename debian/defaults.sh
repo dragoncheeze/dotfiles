@@ -6,7 +6,7 @@ sudo apt install xserver-xorg xorg lxpolkit rsync gtk2-engines-murrine \
     pavucontrol pulsemixer materia-gtk-theme arc-theme gnome-themes-extra \
     papirus-icon-theme pcmanfm xarchiver rofi libxft-dev libx11-dev libxinerama-dev \
     galculator geany dunst libnotify-bin suckless-tools build-essential curl \
-    wget sxiv scrot feh htop mpv synaptic gamemode wine picom fwupd \
+    wget sxiv scrot feh htop mpv synaptic gamemode wine picom fwupd libglib2.0-bin \
     i3status python3-i3ipc playerctl cups pipewire-audio libncurses-dev -y &&
 sudo dpkg --add-architecture i386 && sudo apt update && 
 sudo apt install -y wine64 wine32 libasound2-plugins:i386 libsdl2-2.0-0:i386 \ 
