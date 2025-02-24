@@ -7,7 +7,7 @@ sudo pacman -S --needed vim pacman-contrib sway swaylock swayidle swaybg i3statu
     gnome-themes-extra otf-font-awesome noto-fonts-emoji ttf-croscore ttf-dejavu ttf-droid \
     thunar thunar-archive-plugin thunar-volman tumbler fuse geany galculator \
     gnu-free-fonts ttf-liberation noto-fonts ttf-roboto ttf-ubuntu-font-family \
-    nwg-look autotiling materia-gtk-theme nwg-look noto-fonts-emoji fwdup \
+    nwg-look autotiling materia-gtk-theme nwg-look noto-fonts-emoji fwupd \
     xdg-desktop-portal-gtk xdg-desktop-portal-wlr &&
 # Cups
 sudo systemctl enable cups &&
