@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pacman -S --needed vim pacman-contrib sway swaylock swayidle swaybg i3status \
-    foot rofi seatd playerctl papirus-icon-theme rsync \
+    foot rofi seatd playerctl papirus-icon-theme rsync uwsm\
     lxappearance pipewire pipewire-pulse wireplumber wl-clipboard man-db fastfetch \
     gtk-engine-murrine mpd mpv xorg-xwayland gvfs xarchiver evince simple-scan lxsession \
     gamemode flatpak polkit cups ipp-usb ghostscript dunst imv libadwaita \
