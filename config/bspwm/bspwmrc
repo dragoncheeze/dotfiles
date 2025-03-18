@@ -7,7 +7,7 @@ lxpolkit &
 picom --experimental-backends &
 killall polybar
 $HOME/.config/polybar/launch.sh
-feh --bg-fill ~/builds/wallpaper/tree.png
+feh --bg-fill ~/builds/dotfiles/wallpaper/outrun.jpg
 
 bspc monitor -d 1 2 3 4 5
 
@@ -28,7 +28,7 @@ bspc config pointer_action3 resize_corner
 #### BSPWM coloring ####
 bspc config normal_border_color		      "#444444"
 bspc config active_border_color	          "#1e1e1e"
-bspc config focused_border_color	      "#458588"
+bspc config focused_border_color	      "#77dd77"
 bspc config presel_feedback_color	      "#5e81ac"
 bspc config urgent_border_color 	      "#dd2727"
 
@@ -38,6 +38,8 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Lutris  state=floating
 bspc rule -a CurseForge  state=floating
+bspc rule -a steam_app_0  state=floating
+bspc rule -a steam_app_default  state=floating
 bspc rule -a wowupcf  state=floating
 bspc rule -a bottles  state=floating
 bspc rule -a battle.net.exe desktop='^1' state=floating
