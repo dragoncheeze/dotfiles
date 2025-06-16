@@ -1,0 +1,29 @@
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[window]
+opacity = 0.8
+
+[window.padding]
+x = 5
+y = 5
