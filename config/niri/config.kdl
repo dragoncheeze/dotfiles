@@ -62,7 +62,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="95%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -71,7 +71,7 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-  output "eDP-1" {
+  output "HDMI-A-2" {
     // Uncomment this line to disable this output.
     // off
 
@@ -81,7 +81,7 @@ input {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@60"
+    mode "1920x1080@74.986"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -259,7 +259,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "sh" "-c" "swaybg -i ~/builds/gentoo/wallpaper/outrun.jpg"
+spawn-at-startup "sh" "-c" "swaybg -i ~/builds/dotfiles/wallpaper/outrun.jpg"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -370,7 +370,7 @@ binds {
 
     Mod+X { close-window; }
 
-    Mod+B { spawn "brave"; }
+    Mod+B { spawn "brave-browser"; }
     Mod+N { spawn "thunar"; }
 
     Mod+Left  { focus-column-left; }
@@ -515,13 +515,13 @@ binds {
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
     // If the window is already in a column, they will expel it out.
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    Mod+BracketLeft  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    Mod+BracketRight { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
