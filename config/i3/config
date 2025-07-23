@@ -8,7 +8,7 @@ gaps outer 0
 default_border pixel 5
 default_floating_border pixel 5
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i ~/builds/dotfiles/wallpaper/aafreen.png
 exec --no-startup-id lxpolkit
 exec --no-startup-id picom
 exec_always --no-startup-id autotiling
