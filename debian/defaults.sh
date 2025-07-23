@@ -1,6 +1,6 @@
 #!/bin/sh
 ## Default programs
-sudo apt install xserver-xorg xorg lxpolkit rsync gtk2-engines-murrine \
+sudo apt install xserver-xorg xorg xinput lxpolkit rsync gtk2-engines-murrine \
     fonts-ubuntu autotiling fonts-dejavu fonts-font-awesome fonts-liberation2 \
     fonts-recommended fonts-noto fonts-roboto libxkbcommon-dev lxappearance \
     pavucontrol pulsemixer gnome-themes-extra papirus-icon-theme \
